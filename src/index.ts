@@ -1,9 +1,19 @@
 export {};
 
-let arrayOfAnything:(string|number|boolean)[];
+let user: {
+    name: string,
+    age: number
+}
 
-let array1 = [1,"K",5,"h"];
-let array2 = [true,"K",5,false];
+const creatUser = (name:string,age:number):{name:String,age:number}=>{
+    user = {
+    name:name,
+    age:age
+  }
+  console.log(user.name,user.age);
+   return {name:user.name,age:user.age} 
+}
 
-arrayOfAnything = [...array2];
-console.log(arrayOfAnything)
+ const {name,age} =creatUser("Jackson",31);
+ console.log(name,age)
+
