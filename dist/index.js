@@ -1,43 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let applicant;
-let applicantForFS;
-const developerRecruit = (name, age, languages) => {
-    applicantForFS = {
-        name: name,
-        age: age,
-        languages: languages,
-        isReactDev: () => {
-            const foundReact = applicantForFS.languages.find(lan => lan.toLowerCase() === "react");
-            if (!foundReact) {
-                return false;
-            }
-            return true;
-        },
-        willAcceptAsFD: () => {
-            if (!applicantForFS.isReactDev()) {
-                console.log("We can't accept you as a FD!");
-                return false;
-            }
-            console.log("You are hired as a FD!");
-            return true;
-        },
-        willacceptAsFSD: () => {
-            const BEfound = applicantForFS.languages.find(lan => lan.toLowerCase() === "java" || lan.toLowerCase() === "express");
-            if (!BEfound) {
-                console.log(`We can't hire you as a FSD.`);
-                return false;
-            }
-            console.log(`You are hired as a FSD with ${BEfound}`);
-            return true;
-        }
-    };
-    return { name: applicantForFS.name, age: applicantForFS.age, languages: applicantForFS.languages, isReactDev: applicantForFS.isReactDev, willAcceptAsFD: applicantForFS.willAcceptAsFD, willacceptAsFSD: applicantForFS.willacceptAsFSD };
+var Direction;
+(function (Direction) {
+    Direction["UP"] = "UP";
+    Direction["DOWN"] = "DOWN";
+    Direction["FORWARD"] = "FORWARD";
+})(Direction || (Direction = {}));
+const directionChange = (direction) => {
+    switch (direction) {
+        case Direction.UP:
+            console.log("UP");
+            break;
+        case Direction.DOWN:
+            console.log("DOWN");
+            break;
+        default:
+            console.log("Forward");
+            break;
+    }
 };
-let applicantName = "Kyaw Thiha";
-let applicantAge = 21;
-let applicantLanguages = ["React", "TS", "Java"];
-const { name, age, languages, isReactDev, willAcceptAsFD, willacceptAsFSD } = developerRecruit(applicantName, applicantAge, applicantLanguages);
-console.log(isReactDev());
-console.log(willAcceptAsFD());
-console.log(willacceptAsFSD());
+directionChange(Direction.DOWN);
