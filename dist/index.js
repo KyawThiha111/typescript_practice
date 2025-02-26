@@ -1,22 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Direction;
-(function (Direction) {
-    Direction["UP"] = "UP";
-    Direction["DOWN"] = "DOWN";
-    Direction["FORWARD"] = "FORWARD";
-})(Direction || (Direction = {}));
-const directionChange = (direction) => {
-    switch (direction) {
-        case Direction.UP:
-            console.log("UP");
-            break;
-        case Direction.DOWN:
-            console.log("DOWN");
-            break;
-        default:
-            console.log("Forward");
-            break;
-    }
+let juniorDev;
+let seniorDev;
+juniorDev = {
+    name: "Kyaw Thiha",
+    age: 21,
+    languages: ["React", "Typescript", "Express", "Nextjs", "Python"]
 };
-directionChange(Direction.DOWN);
+seniorDev = {
+    bio: {
+        name: "Kyaw Thiha",
+        age: 24,
+        languages: ["Javascript", "Express", "Next", "Python", "Django"]
+    },
+    experience: 3
+};
+console.log(juniorDev.languages.toString());
+console.log(seniorDev.bio.languages.toString());

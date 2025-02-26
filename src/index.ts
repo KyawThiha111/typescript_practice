@@ -1,47 +1,30 @@
 export {}
 
-//enum is short for enumeraton, a datatype consisting of a set of named value
-// enum as numeric values
-/* enum Direction{
-    UP=0, 
-    DOWN,
-    FORWARD
+//Type aliases allow you to define custom data types that can be reused through your code.
+
+type junior = {
+    name: string,
+    age:number,
+    languages: string[]
 }
-
-const Turning = (direction:number)=>{
-    switch (direction) {
-        case Direction.UP:
-            console.log("Going Up!")
-            break;
-        case Direction.DOWN:
-            console.log("Going Down!")
-        default:
-            console.log("Going Forward!")
-            break;
-    }
+type Senior = {
+    bio:junior,
+    experience:number
 }
- */
-
-enum Direction{
-    UP="UP",
-    DOWN="DOWN",
-    FORWARD="FORWARD"
+let juniorDev:junior;
+let seniorDev:Senior;
+juniorDev = {
+    name:"Kyaw Thiha",
+    age:21,
+    languages:["React","Typescript","Express","Nextjs","Python"]
 }
-
-const directionChange = (direction:"UP"|"DOWN"|"FORWARD")=>{
- switch (direction) {
-    case Direction.UP:
-        console.log("UP")
-        break;
-    case Direction.DOWN:
-        console.log("DOWN")
-        break;
-    default:
-        console.log("Forward")
-        break;
- }
+seniorDev = {
+    bio:{
+        name:"Kyaw Thiha",
+        age:24,
+        languages:["Javascript","Express","Next","Python","Django"]
+    },
+    experience:3
 }
-
-directionChange(Direction.DOWN)
-
-
+console.log(juniorDev.languages.toString())
+console.log(seniorDev.bio.languages.toString())
