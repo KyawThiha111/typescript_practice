@@ -1,30 +1,33 @@
 export {}
 
-//Type aliases allow you to define custom data types that can be reused through your code.
+class JuniorDev{
+    name:string;
+    readonly age:number;
+    languages:string[];
+    constructor(x:string,y:number,z:string[]){
+      this.name = x,
+      this.age = y,
+      this.languages =z
+    }
+    information():void{
+         console.log(`${this.name} is ${this.age} years old!`)
+         console.log("He can code in", this.languages.toString())
+    }
+}
 
-type junior = {
-    name: string,
-    age:number,
-    languages: string[]
+class SeniorDev extends JuniorDev{
+    experience:number;
+    constructor(x:string,y:number,z:string[],e:number){
+      super(x,y,z);
+      this.experience = e
+    }
+    information(): void {
+        console.log(`The senior ${this.name} has ${this.experience}-year-experience`);
+        console.log(`In ${this.languages.toString()}`)
+    }
 }
-type Senior = {
-    bio:junior,
-    experience:number
-}
-let juniorDev:junior;
-let seniorDev:Senior;
-juniorDev = {
-    name:"Kyaw Thiha",
-    age:21,
-    languages:["React","Typescript","Express","Nextjs","Python"]
-}
-seniorDev = {
-    bio:{
-        name:"Kyaw Thiha",
-        age:24,
-        languages:["Javascript","Express","Next","Python","Django"]
-    },
-    experience:3
-}
-console.log(juniorDev.languages.toString())
-console.log(seniorDev.bio.languages.toString())
+let employeeArr:SeniorDev[] = [];
+const senior1 = new SeniorDev("Kyaw Thiha",24,["Javascript","Express","Python","React"],3)
+const senior2 = new SeniorDev("MHK",25,["Javascript","Express","C#"],6)
+employeeArr.push(senior2);
+ console.log(employeeArr)
